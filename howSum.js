@@ -7,10 +7,11 @@ const howSum = (targetSum, numbers, memo = {}) => {
     let reminder = targetSum - num;
     let reminderSum = howSum(reminder, numbers, memo);
     if (reminderSum !== null) {
-        memo[]
-        return [...reminderSum, num]}
+      memo[targetSum] = [...reminderSum, num];
+      return [...reminderSum, num];
+    }
   }
-
+  memo[targetSum] = null;
   return null;
 };
 
